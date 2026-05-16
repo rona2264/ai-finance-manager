@@ -10,6 +10,10 @@
   "dependencies": {
     "@clerk/express": "^2.1.15",
     "@google/generative-ai": "^0.24.1",
-    "exceljs": "^4.4.0"
+    "exceljs": "^4.4.0",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7"
   }
 }
