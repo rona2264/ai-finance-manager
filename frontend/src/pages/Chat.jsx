@@ -220,7 +220,7 @@ export default function Chat({ onboardingData }) {
         <div className="flex md:hidden justify-center gap-2 bg-white border-b border-slate-200 py-2 px-2 z-0 shrink-0">
           <button onClick={() => setActiveTab('chat')} className={`flex-1 flex justify-center py-2 rounded-lg text-sm font-medium ${activeTab === 'chat' ? 'bg-slate-100 text-slate-900' : 'text-slate-500'}`}>Chat</button>
           <button onClick={() => setActiveTab('charts')} className={`flex-1 flex justify-center py-2 rounded-lg text-sm font-medium ${activeTab === 'charts' ? 'bg-slate-100 text-slate-900' : 'text-slate-500'}`}>Dashboard</button>
-          <button onClick={() => setActiveTab('history')} className={`flex-1 flex justify-center py-2 rounded-lg text-sm font-medium ${activeTab === 'history' ? 'bg-slate-100 text-slate-900' : 'text-slate-500'}`}>Estado Cta</button>
+          <button onClick={() => setActiveTab('history')} className={`flex-1 flex justify-center py-2 rounded-lg text-sm font-medium ${activeTab === 'history' ? 'bg-slate-100 text-slate-900' : 'text-slate-500'}`}>Estado Cuenta</button>
         </div>
 
         {/* CONTENEDOR PRINCIPAL DINÁMICO */}
