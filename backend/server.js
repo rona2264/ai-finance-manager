@@ -9,14 +9,26 @@ import transactionRoutes from './routes/transactionRoutes.js';
 import { clerkMiddleware } from '@clerk/express';
 import { protectRoute } from './middleware/auth.js';
 
+console.log("--- INICIANDO SERVIDOR ---");
+if (!process.env.MONGO_URI) console.log("❌ FALTA VARIABLE: MONGO_URI");
+if (!process.env.GEMINI_API_KEY) console.log("❌ FALTA VARIABLE: GEMINI_API_KEY");
+if (!process.env.CLERK_SECRET_KEY) console.log("❌ FALTA VARIABLE: CLERK_SECRET_KEY");
+
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(clerkMiddleware()); // Parsea y valida el JWT de Clerk
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('✅ Conectado a MongoDB Local'))
-  .catch(err => console.error('❌ Error conectando a MongoDB:', err));
+try {
+  app.use(clerkMiddleware()); // Parsea y valida el JWT de Clerk
+} catch (error) {
+  console.log("❌ Error iniciando Clerk:", error.message);
+}
+
+if (process.env.MONGO_URI) {
+  mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log('✅ Conectado a MongoDB en la Nube'))
+    .catch(err => console.error('❌ Error conectando a MongoDB:', err));
+}
 
 // --- RUTAS ---
 app.use('/api/profile', protectRoute, profileRoutes);  // protegida

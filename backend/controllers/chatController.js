@@ -7,12 +7,18 @@ import ChatMessage from '../models/ChatMessage.js';
 const getLocalDate = () => new Date().toLocaleDateString('en-CA', { timeZone: 'America/Argentina/Buenos_Aires' });
 
 // Inicializar Gemini
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const jsonModel = genAI.getGenerativeModel({ 
-  model: "gemini-2.5-flash-lite",
-  generationConfig: { responseMimeType: "application/json" }
-});
-const textModel = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
+let genAI;
+let jsonModel;
+let textModel;
+
+if (process.env.GEMINI_API_KEY) {
+  genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+  jsonModel = genAI.getGenerativeModel({ 
+    model: "gemini-2.5-flash-lite",
+    generationConfig: { responseMimeType: "application/json" }
+  });
+  textModel = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
+}
 
 // Convertido a función para que la fecha se calcule dinámicamente en cada mensaje
 const getIntentSystemPrompt = () => `
