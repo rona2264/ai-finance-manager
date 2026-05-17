@@ -9,13 +9,13 @@
 
 **fAInance** es una aplicación web Full-Stack de gestión financiera personal impulsada por Inteligencia Artificial (Google Gemini 2.5 Flash). Permite a los usuarios registrar, categorizar y analizar sus ingresos y gastos simplemente usando lenguaje natural a través de un chat.
 
-🔗 **[Ver Demo en Vivo](https://tu-enlace-de-vercel.vercel.app)** *(Incluye opción de "Iniciar Demo" sin necesidad de registro)*
+🔗 **[Ver Demo en Vivo](https://fainance-frontend.vercel.app/)** *(Incluye opción de "Iniciar Demo" sin necesidad de registro)*
 
 ---
 
 ## ✨ Características Principales
 
-- **Procesamiento de Lenguaje Natural:** Escribe "gasté 25000 en el súper" y la IA extraerá el monto, la categoría y creará el registro.
+- **Procesamiento de Lenguaje Natural:** Escribí "gasté 25000 en el súper" y fAInance va a extraer el monto, la categoría y creará el registro.
 - **Dashboard Interactivo:** Gráficos en tiempo real (Chart.js) que muestran el balance, gastos por categoría y proyecciones a 12 meses de pagos en cuotas y gastos fijos.
 - **Estado de Cuenta Inteligente:** Visualización tabular de los movimientos, permitiendo filtrar por fechas, montos y categorías.
 - **Autenticación Segura:** Gestión de usuarios mediante **Clerk**.
@@ -27,15 +27,15 @@
 
 - **Frontend:** React.js, Vite, Tailwind CSS, Chart.js
 - **Backend:** Node.js, Express.js
-- **Base de Datos:** MongoDB (Mongoose)
-- **Servicios Externos:** Google Gemini API (LLM), Clerk (Auth)
-- **Despliegue:** Vercel (Frontend) y Render (Backend)
+- **Base de Datos:** MongoDB
+- **Servicios Externos:** Google Gemini API, Clerk
+- **Despliegue:** Vercel y Render
 
 ---
 
 ## 💻 Instalación Local (Para Desarrolladores)
 
-Si deseas correr este proyecto en tu entorno local, sigue estos pasos:
+Si querés correr este proyecto en tu entorno local, hacé lo siguiente:
 
 1. **Clonar el repositorio:**
    ```bash
@@ -48,7 +48,7 @@ Si deseas correr este proyecto en tu entorno local, sigue estos pasos:
    cd backend
    npm install
    ```
-   Crea un archivo `.env` basándote en el archivo `.env.example` y agrega tus API Keys. Luego, inicia el servidor:
+   Creá un archivo `.env` basándote en el archivo `.env.example` y agregá tus API Keys. Luego, iniciá el servidor:
    ```bash
    npm run dev
    ```
@@ -58,7 +58,7 @@ Si deseas correr este proyecto en tu entorno local, sigue estos pasos:
    cd ../frontend
    npm install
    ```
-   Crea un archivo `.env` y agrega la clave pública de Clerk. Luego, inicia el cliente:
+   Creá un archivo `.env` y agregá la clave pública de Clerk. Después, iniciá el cliente:
    ```bash
    npm run dev
    ```
