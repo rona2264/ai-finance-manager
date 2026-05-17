@@ -9,17 +9,21 @@ export const createOrUpdateProfile = async (req, res) => {
 
     console.log('📝 POST /api/profile recibido:', { userId, monthly_salary, available_balance, onboardingData });
 
-    if (!userId || monthly_salary === undefined) {
-      return res.status(400).json({ error: "userId y monthly_salary son requeridos" });
+    if (!userId) {
+      return res.status(400).json({ error: "userId es requerido" });
     }
+
+    // Sanitización para evitar que Mongoose crashee si se envían campos vacíos
+    const safeSalary = Number(monthly_salary) || 0;
+    const safeBalance = Number(available_balance) || 0;
 
     const profile = await UserProfile.findOneAndUpdate(
       { userId },
       { 
         $set: { 
           userId,
-          monthly_salary,
-          available_balance: available_balance || 0,
+          monthly_salary: safeSalary,
+          available_balance: safeBalance,
           last_salary_update: new Date()
         } 
       },
