@@ -1,5 +1,5 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import Transaction from '../models/transaction.js';
+import Transaction from '../models/Transaction.js';
 import UserProfile from '../models/UserProfile.js';
 import ChatMessage from '../models/ChatMessage.js';
 

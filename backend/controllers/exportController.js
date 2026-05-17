@@ -1,5 +1,5 @@
 import exceljs from 'exceljs';
-import Transaction from '../models/transaction.js';
+import Transaction from '../models/Transaction.js';
 
 export const exportToExcel = async (req, res) => {
   try {

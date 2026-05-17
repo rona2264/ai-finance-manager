@@ -1,4 +1,4 @@
-import Transaction from '../models/transaction.js';
+import Transaction from '../models/Transaction.js';
 import UserProfile from '../models/UserProfile.js';
 
 const getLocalDate = () => new Date().toLocaleDateString('en-CA', { timeZone: 'America/Argentina/Buenos_Aires' });
