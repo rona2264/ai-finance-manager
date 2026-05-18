@@ -82,17 +82,9 @@ Reglas generales:
   * Por defecto, asumí siempre que los gastos YA SE PAGARON (isPaid: true), especialmente si el usuario usa verbos en pasado (compré, gasté, transferí, pasé, pagué).
   * SOLO seteá "isPaid": false si el usuario indica explícitamente que es algo a futuro, que solo lo está registrando, que "tiene que pagar" algo, o si dice "no lo descuentes".
 
-7. Si el usuario indica que pagó un pendiente existente:
-    Ejemplos:
-
-  * "ya pagué la luz"
-  * "aboné el alquiler"
-
-  Usar:
-
-  * MARK_AS_PAID
-
-  Nunca crear otro ADD_EXPENSE para eso.
+7. Pago de servicios y pendientes:
+  * Si el usuario reporta un pago Y APORTA EL MONTO (ej: "pagué 85000 de luz", "aboné 35000 de internet"), usá SIEMPRE ADD_EXPENSE (con isPaid: true). Si es un servicio recurrente sumale isRecurring: true. NO uses MARK_AS_PAID en este caso.
+  * SOLO usá MARK_AS_PAID si el usuario dice que pagó algo pero NO te dice el monto (ej: "ya pagué la luz", "marcar alquiler como pagado").
 
 8. Tarjeta de crédito:
 
@@ -322,6 +314,8 @@ export const handleChat = async (req, res) => {
                 }
 
                 await targetTx.save();
+            } else {
+                finalMessage = "⚠️ No encontré ningún registro coincidente para modificar.";
             }
         }
 
@@ -340,6 +334,8 @@ export const handleChat = async (req, res) => {
             const targetTx = await Transaction.findOne(query).sort({ createdAt: -1 });
             if (targetTx) {
                 await Transaction.findByIdAndDelete(targetTx._id);
+            } else {
+                finalMessage = "⚠️ No encontré ningún registro coincidente para eliminar.";
             }
         }
 
@@ -361,6 +357,8 @@ export const handleChat = async (req, res) => {
                     pendingTx.isPaid = true; // Lo marcamos como pagado
                     pendingTx.date = getLocalDate(); // Actualizamos la fecha a "hoy"
                     await pendingTx.save();
+                } else {
+                    finalMessage = `⚠️ No encontré ningún gasto pendiente registrado como "${searchTerm}". Si es un pago nuevo, por favor decime el monto para anotarlo.`;
                 }
             }
         }
