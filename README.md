@@ -15,8 +15,8 @@
 
 ## ✨ Características Principales
 
-- **Procesamiento de Lenguaje Natural:** Escribí "gasté 25000 en el súper" y fAInance va a extraer el monto, la categoría y creará el registro.
-- **Dashboard Interactivo:** Gráficos en tiempo real (Chart.js) que muestran el balance, gastos por categoría y proyecciones a 12 meses de pagos en cuotas y gastos fijos.
+- **Procesamiento de Lenguaje Natural:** Escribí "gasté 25000 en el súper" y fAInance va a extraer el monto, la categoría y va a crear el registro.
+- **Dashboard Interactivo:** Gráficos en tiempo real (implementados con Chart.js) que muestran el balance, gastos por categoría y proyecciones a 12 meses de pagos en cuotas y gastos fijos.
 - **Estado de Cuenta Inteligente:** Visualización tabular de los movimientos, permitiendo filtrar por fechas, montos y categorías.
 - **Autenticación Segura:** Gestión de usuarios mediante **Clerk**.
 - **Exportación de Datos:** Descarga de reportes en Excel ordenados por pestañas (Movimientos, Tarjetas, Gastos Fijos).
@@ -48,7 +48,7 @@ Si querés correr este proyecto en tu entorno local, hacé lo siguiente:
    cd backend
    npm install
    ```
-   Creá un archivo `.env` basándote en el archivo `.env.example` y agregá tus API Keys. Luego, iniciá el servidor:
+   Creá un archivo `.env` basándote en el archivo `.env.example` ubicado en el root del repo y agregá tus API Keys. Luego, iniciá el servidor:
    ```bash
    npm run dev
    ```
