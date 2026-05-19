@@ -17,13 +17,13 @@
 
 - **Procesamiento de Lenguaje Natural:** Escribí "gasté 25000 en el súper" y fAInance va a extraer el monto, la categoría y va a crear el registro.
 - **Dashboard Interactivo:** Gráficos en tiempo real (implementados con Chart.js) que muestran el balance, gastos por categoría y proyecciones a 12 meses de pagos en cuotas y gastos fijos.
-- **Estado de Cuenta Inteligente:** Visualización tabular de los movimientos, permitiendo filtrar por fechas, montos y categorías.
+- **Estado de Cuenta:** Visualización tabular de los movimientos, permitiendo filtrar por fechas, montos y categorías.
 - **Autenticación Segura:** Gestión de usuarios mediante **Clerk**.
 - **Exportación de Datos:** Descarga de reportes en Excel ordenados por pestañas (Movimientos, Tarjetas, Gastos Fijos).
 
 ---
 
-## 🛠️ Stack Tecnológico
+## 🛠️ Stack usado
 
 - **Frontend:** React.js, Vite, Tailwind CSS, Chart.js
 - **Backend:** Node.js, Express.js
@@ -33,7 +33,7 @@
 
 ---
 
-## 💻 Instalación Local (Para Desarrolladores)
+## 💻 Instalación Local 
 
 Si querés correr este proyecto en tu entorno local, hacé lo siguiente:
 
