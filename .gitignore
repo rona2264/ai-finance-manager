@@ -19,3 +19,4 @@ Thumbs.db
 
 # Script para abrir dashboards en Vercel, Render, Clerk, MongoDB Atlas y abrir la propia página
 control_fAInance.py
+fAinanceDashboards.bat
